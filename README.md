@@ -1,16 +1,115 @@
-# React + Vite
+# Waqar Hassan - Academic Research Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## Overview
+This repository contains the source code for a personal academic research portfolio website. It presents research themes, projects, publications, professional background, CV access, and contact information in a structured, data-driven React application.
 
-Currently, two official plugins are available:
+## Research
+The portfolio highlights research areas currently represented in the repository data:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Graph Machine Learning
+- Spatio-temporal AI
+- Visual Analytics
+- Explainable AI
 
-## React Compiler
+These areas are connected to projects and publications through explicit ID-based relationships.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Website Sections
+- Home: high-level introduction, research overview, featured projects, and selected publications.
+- Research: detailed research areas with linked projects and publications.
+- Projects: project-focused view with metadata and research/publication relationships.
+- Publications: filterable and year-grouped scholarly outputs.
+- About: professional profile, research perspective, and related links.
+- CV: concise academic overview and downloadable full CV PDF.
+- Contact: professional email and academic/professional profile links.
 
-## Expanding the Oxlint configuration
+## Technology
+This repository currently uses:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- React
+- Vite
+- React Router
+- JavaScript (ES modules)
+- CSS
+- Oxlint (linting)
+
+## Data-Driven Architecture
+Core portfolio content is maintained in structured data files and rendered by reusable components.
+
+- Site metadata/navigation/social links: src/data/site.js
+- Research areas: src/data/research.js
+- Projects: src/data/projects.js
+- Publications: src/data/publications.js
+- About page content: src/data/about.js
+- CV page content: src/data/cv.js
+- Contact page content: src/data/contact.js
+
+In most cases, adding or updating a publication, project, or research area should be done in the corresponding data file rather than by creating new page logic.
+
+## Repository Structure
+```text
+.
+|- public/
+|  |- cv/
+|  |  \- Waqar_Hassan_CV.pdf
+|  \- favicon.svg
+|- src/
+|  |- assets/
+|  |- components/
+|  |  |- Footer/
+|  |  |- Navbar/
+|  |  |- ProjectCard/
+|  |  |- PublicationCard/
+|  |  |- ResearchCard/
+|  |  \- SectionTitle/
+|  |- data/
+|  |  |- about.js
+|  |  |- contact.js
+|  |  |- cv.js
+|  |  |- projects.js
+|  |  |- publications.js
+|  |  |- research.js
+|  |  \- site.js
+|  |- pages/
+|  |  |- About/
+|  |  |- Contact/
+|  |  |- CV/
+|  |  |- Home/
+|  |  |- Projects/
+|  |  |- Publications/
+|  |  \- Research/
+|  |- App.css
+|  |- App.jsx
+|  |- index.css
+|  \- main.jsx
+|- index.html
+|- package.json
+|- vite.config.js
+\- README.md
+```
+
+## Local Development
+Use npm.cmd in this Windows environment.
+
+```bash
+npm.cmd install
+npm.cmd run dev
+```
+
+Available project scripts:
+
+```bash
+npm.cmd run lint
+npm.cmd run build
+npm.cmd run preview
+```
+
+## Deployment
+The site is configured for GitHub Pages hosting. The Vite build includes an SPA fallback by generating dist/404.html from dist/index.html, which supports deep-link access to nested client-side routes.
+
+## CV
+The full CV PDF is served from:
+
+- public/cv/Waqar_Hassan_CV.pdf
+
+## License
+No license file is currently present in this repository.
