@@ -44,7 +44,8 @@ function CV() {
     }
   }, [])
 
-  const researchInterests = (cvContent.researchInterests?.areaIds ?? [])
+  const researchExpertiseItems = cvContent.researchExpertise?.items ?? []
+  const researchExpertiseAreas = (cvContent.researchExpertise?.areaIds ?? [])
     .map((areaId) => researchById.get(areaId))
     .filter(Boolean)
 
@@ -77,8 +78,17 @@ function CV() {
   return (
     <div className="cv-page">
       <section className="cv-page__header">
-        <SectionTitle title="Curriculum Vitae" subtitle={siteConfig.title} level="h1" />
-        <p className="cv-page__summary">{cvContent.header.summary}</p>
+        <SectionTitle
+          title={siteConfig.name}
+          subtitle={cvContent.header.professionalTitle}
+          level="h1"
+        />
+        <p className="cv-page__meta">{cvContent.header.location}</p>
+      </section>
+
+      <section className="cv-page__section">
+        <SectionTitle title={cvContent.professionalProfile.title} level="h2" />
+        <p className="cv-page__summary">{cvContent.professionalProfile.summary}</p>
       </section>
 
       <section className="cv-page__download" aria-labelledby="cv-download-title">
@@ -114,7 +124,13 @@ function CV() {
                 <p className="cv-page__meta">
                   {item.institution} | {item.location} | {item.period}
                 </p>
-                <p>{item.focus}</p>
+                {(item.details ?? []).length ? (
+                  <ul className="cv-page__points">
+                    {item.details.map((detail) => (
+                      <li key={detail}>{detail}</li>
+                    ))}
+                  </ul>
+                ) : null}
               </li>
             ))}
           </ul>
@@ -133,7 +149,6 @@ function CV() {
                 <p className="cv-page__meta">
                   {item.organization} | {item.location} | {item.period}
                 </p>
-                <p>{item.summary}</p>
 
                 {item.highlights?.length ? (
                   <>
@@ -176,16 +191,24 @@ function CV() {
       </section>
 
       <section className="cv-page__section">
-        <SectionTitle title="Research Interests" level="h2" />
-        {researchInterests.length ? (
+        <SectionTitle title={cvContent.researchExpertise.title} level="h2" />
+        {researchExpertiseItems.length ? (
           <ul className="cv-page__chips" aria-label="Research interests">
-            {researchInterests.map((interest) => (
-              <li key={interest.id}>{interest.title}</li>
+            {researchExpertiseItems.map((item) => (
+              <li key={item}>{item}</li>
             ))}
           </ul>
         ) : (
-          <p className="cv-page__empty">No research interests are currently available.</p>
+          <p className="cv-page__empty">No research expertise is currently available.</p>
         )}
+
+        {researchExpertiseAreas.length ? (
+          <ul className="cv-page__points">
+            {researchExpertiseAreas.map((area) => (
+              <li key={area.id}>{area.shortDescription}</li>
+            ))}
+          </ul>
+        ) : null}
       </section>
 
       <section className="cv-page__section">
@@ -210,7 +233,9 @@ function CV() {
             {awards.map((award) => (
               <li key={`${award.label}-${award.publicationId ?? 'item'}`} className="cv-page__entry">
                 <h3>{award.label}</h3>
-                <p className="cv-page__meta">{award.year ?? 'Year not specified'}</p>
+                <p className="cv-page__meta">
+                  {[award.organization, award.category ?? award.year].filter(Boolean).join(' | ')}
+                </p>
                 {award.publication ? <p>{award.publication.title}</p> : null}
               </li>
             ))}
@@ -222,9 +247,9 @@ function CV() {
 
       <section className="cv-page__section">
         <SectionTitle title="Technical Skills" level="h2" />
-        {(cvContent.skills ?? []).length ? (
+        {(cvContent.technicalExpertise ?? []).length ? (
           <ul className="cv-page__list">
-            {cvContent.skills.map((skillGroup) => (
+            {cvContent.technicalExpertise.map((skillGroup) => (
               <li key={skillGroup.category} className="cv-page__entry">
                 <h3>{skillGroup.category}</h3>
                 <ul className="cv-page__skills">
@@ -237,6 +262,32 @@ function CV() {
           </ul>
         ) : (
           <p className="cv-page__empty">No skills are currently available.</p>
+        )}
+      </section>
+
+      <section className="cv-page__section">
+        <SectionTitle title={cvContent.academicService.title} level="h2" />
+        {(cvContent.academicService.points ?? []).length ? (
+          <ul className="cv-page__points">
+            {cvContent.academicService.points.map((point) => (
+              <li key={point}>{point}</li>
+            ))}
+          </ul>
+        ) : (
+          <p className="cv-page__empty">No academic service information is currently available.</p>
+        )}
+      </section>
+
+      <section className="cv-page__section">
+        <SectionTitle title={cvContent.languages.title} level="h2" />
+        {(cvContent.languages.items ?? []).length ? (
+          <ul className="cv-page__chips" aria-label="Languages">
+            {cvContent.languages.items.map((language) => (
+              <li key={language}>{language}</li>
+            ))}
+          </ul>
+        ) : (
+          <p className="cv-page__empty">No language information is currently available.</p>
         )}
       </section>
 
