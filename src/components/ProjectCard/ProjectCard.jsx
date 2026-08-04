@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './ProjectCard.css'
 
 function ProjectCard({ project, mode = 'compact' }) {
@@ -42,7 +43,7 @@ function ProjectCard({ project, mode = 'compact' }) {
 					<ul className="project-card__chips">
 						{relatedResearch.map((research) => (
 							<li key={research.id}>
-								<a href={`/research#${research.id}`}>{research.title}</a>
+								<Link to={`/research#${research.id}`}>{research.title}</Link>
 							</li>
 						))}
 					</ul>
@@ -54,7 +55,7 @@ function ProjectCard({ project, mode = 'compact' }) {
 					<h4 className="project-card__section-title">Related Publications</h4>
 					<ul className="project-card__publication-refs">
 						{relatedPublications.map((publication) => {
-							const publicationUrl = publication.links?.doi || '/publications'
+							const publicationDoi = publication.links?.doi
 
 							return (
 								<li key={publication.id}>
@@ -63,13 +64,13 @@ function ProjectCard({ project, mode = 'compact' }) {
 										{publication.venue}
 										{publication.year ? ` (${publication.year})` : ''}
 									</p>
-									<a
-										href={publicationUrl}
-										target={publication.links?.doi ? '_blank' : undefined}
-										rel={publication.links?.doi ? 'noreferrer' : undefined}
-									>
-										Read publication →
-									</a>
+									{publicationDoi ? (
+										<a href={publicationDoi} target="_blank" rel="noreferrer">
+											Read publication →
+										</a>
+									) : (
+										<Link to="/publications">Read publication →</Link>
+									)}
 								</li>
 							)
 						})}

@@ -37,7 +37,7 @@
 }
 
 .cv-page__download-note code {
-  background: var(--color-surface-muted);
+  background: var(--color-soft-blue);
   border: 1px solid var(--color-border);
   border-radius: 0.4rem;
   padding: 0.05rem 0.35rem;
