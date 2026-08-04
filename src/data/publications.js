@@ -33,6 +33,9 @@ export const publications = [
       project: "",
     },
 
+    relatedResearch: ["spatio-temporal-ai"],
+    relatedProjects: [],
+
     featured: true,
   },
 
@@ -61,6 +64,9 @@ export const publications = [
       project: "",
     },
 
+    relatedResearch: ["graph-machine-learning", "spatio-temporal-ai"],
+    relatedProjects: ["graph-based-crime-prediction"],
+
     featured: true,
   },
 
@@ -88,6 +94,9 @@ export const publications = [
       project: "",
     },
 
+    relatedResearch: [],
+    relatedProjects: [],
+
     featured: false,
   },
 
@@ -114,6 +123,9 @@ export const publications = [
       code: "",
       project: "",
     },
+
+    relatedResearch: [],
+    relatedProjects: [],
 
     featured: false,
   },
@@ -144,6 +156,9 @@ export const publications = [
       project: "",
     },
 
+    relatedResearch: [],
+    relatedProjects: [],
+
     featured: true,
   },
 
@@ -171,6 +186,9 @@ export const publications = [
       code: "",
       project: "",
     },
+
+    relatedResearch: [],
+    relatedProjects: [],
 
     featured: false,
   },
@@ -200,6 +218,9 @@ export const publications = [
       code: "",
       project: "",
     },
+
+    relatedResearch: ["visual-analytics"],
+    relatedProjects: ["dimensionality-reduction-distortion-cues"],
 
     featured: true,
   },
