@@ -21,7 +21,6 @@ export const siteConfig = {
   navigation: [
     { label: "Research", path: "/research" },
     { label: "Projects", path: "/projects" },
-    { label: "Visual Math Lab", path: "/visual-math-lab" },
     { label: "Publications", path: "/publications" },
     { label: "About", path: "/about" },
     { label: "CV", path: "/cv" },

@@ -53,7 +53,7 @@ export const researchAreas = [
       "Dimensionality Reduction",
     ],
     methods: ["Projection Analysis", "Dimensionality Reduction"],
-    relatedProjects: ["dimensionality-reduction-distortion-cues", "visual-math-lab"],
+    relatedProjects: ["dimensionality-reduction-distortion-cues"],
     relatedPublications: ["enriching-dimensionality-reduction-distortion-cues"],
     featured: true,
   },

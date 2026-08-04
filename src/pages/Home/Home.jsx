@@ -112,23 +112,6 @@ function Home() {
           <p className="empty-state">No featured publications are currently available.</p>
         )}
       </section>
-
-      <section className="page-section visual-lab-callout">
-        <SectionTitle
-          title="Visual Math Lab"
-          subtitle="Interactive experiments and visual learning modules"
-          level="h2"
-        />
-        <p className="visual-lab-callout__description">
-          Explore an interactive environment for understanding mathematical and machine-learning
-          concepts through visualization.
-        </p>
-        <p>
-          <Link to="/visual-math-lab" className="visual-lab-callout__link">
-            Explore the Visual Math Lab →
-          </Link>
-        </p>
-      </section>
     </div>
   )
 }

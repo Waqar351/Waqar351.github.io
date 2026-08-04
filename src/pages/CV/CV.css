@@ -1,0 +1,163 @@
+.cv-page {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3.8rem);
+  padding-bottom: 2rem;
+}
+
+.cv-page__header {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1.2rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.cv-page__summary {
+  margin: 0;
+  color: var(--color-text-secondary);
+  max-width: 78ch;
+}
+
+.cv-page__download {
+  border: 1px solid var(--color-border);
+  border-radius: 0.95rem;
+  background: linear-gradient(120deg, rgba(239, 246, 255, 0.85), rgba(255, 255, 255, 0.95));
+  padding: clamp(1rem, 3vw, 1.4rem);
+  display: grid;
+  gap: 0.65rem;
+}
+
+.cv-page__download p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.cv-page__download-note {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.cv-page__download-note code {
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  border-radius: 0.4rem;
+  padding: 0.05rem 0.35rem;
+}
+
+.cv-page__section {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.cv-page__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.cv-page__entry {
+  border: 1px solid var(--color-border);
+  border-radius: 0.85rem;
+  background: var(--color-surface);
+  padding: 0.9rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.cv-page__entry h3 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+.cv-page__meta {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+.cv-page__entry p {
+  margin: 0;
+}
+
+.cv-page__chips,
+.cv-page__points,
+.cv-page__profiles,
+.cv-page__skills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cv-page__chips li,
+.cv-page__skills li {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-soft-blue);
+  color: var(--color-text-secondary);
+  font-size: 0.82rem;
+  padding: 0.27rem 0.6rem;
+}
+
+.cv-page__profiles a {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.33rem 0.72rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.84rem;
+  transition: border-color 150ms ease, color 150ms ease, background-color 150ms ease;
+}
+
+.cv-page__profiles a:hover {
+  border-color: rgba(37, 99, 235, 0.28);
+  color: var(--color-secondary);
+  background: rgba(239, 246, 255, 0.85);
+}
+
+.cv-page__points {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.cv-page__points li {
+  color: var(--color-text-secondary);
+}
+
+.cv-page__subsection-title {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.cv-page__publications {
+  border-top: 1px solid var(--color-border);
+}
+
+.cv-page__publication-item {
+  border-bottom: 1px solid var(--color-border);
+  padding-block: 0.95rem;
+}
+
+.cv-page__empty {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 700px) {
+  .cv-page__download .button-link {
+    width: 100%;
+  }
+}

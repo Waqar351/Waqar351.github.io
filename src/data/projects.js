@@ -63,35 +63,4 @@ export const projects = [
 
     featured: true,
   },
-
-  {
-    id: "visual-math-lab",
-    title: "Visual Math Lab",
-    shortDescription:
-      "Interactive learning environment for mathematical and machine learning intuition through visualization.",
-    category: "Interactive Learning",
-    year: 2026,
-
-    description:
-      "An interactive learning environment designed to build intuition for mathematical and machine learning concepts through visualization and interaction.",
-
-    technologies: [
-      "Python",
-      "Streamlit",
-      "Plotly",
-      "Interactive Visualization",
-    ],
-
-    links: {
-      github: "",
-      demo: "",
-    },
-
-    image: "",
-    imageAlt: "",
-    relatedResearch: ["visual-analytics"],
-    relatedPublications: [],
-
-    featured: true,
-  },
 ];
