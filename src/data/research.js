@@ -94,7 +94,7 @@ export const researchAreas = [
       "Quantification Methods",
     ],
     methods: ["Quantification Methods", "Distribution Shift Analysis"],
-    relatedProjects: ["dimensionality-reduction-distortion-cues"],
+    relatedProjects: ["quantification-assessment"],
     relatedPublications: [],
     featured: true,
   },

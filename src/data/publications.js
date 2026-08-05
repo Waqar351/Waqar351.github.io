@@ -219,7 +219,7 @@ export const publications = [
       project: "",
     },
 
-    relatedResearch: ["visual-analytics", "explainable-ai", "dimensionality-reduction"],
+    relatedResearch: ["visual-analytics", "explainable-ai"],
     relatedProjects: ["dimensionality-reduction-distortion-cues"],
 
     featured: true,

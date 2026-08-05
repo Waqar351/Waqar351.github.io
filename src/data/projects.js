@@ -8,7 +8,7 @@ export const projects = [
     year: 2024,
 
     description:
-      "Graph-based machine learning for modeling and predicting crime patterns using spatial and temporal information.",
+      "Investigates crime prediction with spatio-temporal Graph Neural Networks, including DySAT and EvolveGCN, using a data modeling framework that integrates crime data, street-map graphs, and urban information to represent spatial and temporal dependencies in crime patterns.",
 
     technologies: [
       "Python",
@@ -43,7 +43,7 @@ export const projects = [
     year: 2025,
 
     description:
-      "Research on dimensionality reduction and visual cues for understanding distortion in projected data.",
+      "Investigates how dimensionality-reduction layouts can misrepresent relationships in high-dimensional data. The work enriches 2D projections with Delaunay-based visual cues that communicate true high-dimensional distances and evaluates whether those cues reduce analytical errors relative to established visualization baselines.",
 
     technologies: [
       "Python",
@@ -77,7 +77,7 @@ export const projects = [
     year: 2019,
 
     description:
-      "Research on quantification assessment and the role of test-set size in evaluating quantification methods.",
+      "Brings together research on class-prevalence estimation and quantification assessment across test-set size, score variability, concept drift, and large-scale settings. The related studies examine evaluation protocols and efficient methods such as Sample Mean Matching (SMM) without treating them as a single experimental methodology.",
 
     technologies: [
       "Python",
@@ -99,7 +99,7 @@ export const projects = [
     relatedPublications: [
       "importance-test-set-size-quantification",
       "accurately-quantifying-billion-instances",
-      "accurately-quantifying-under-score-variability",
+      "accurately-quantifying-score-variability",
       "pitfalls-quantification-assessment",
     ],
 
