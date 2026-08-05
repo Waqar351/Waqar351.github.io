@@ -5,7 +5,7 @@ export const projects = [
     shortDescription:
       "Graph-based machine learning for modeling and predicting crime patterns using spatial and temporal information.",
     category: "Graph Machine Learning",
-    year: 2026,
+    year: 2024,
 
     description:
       "Graph-based machine learning for modeling and predicting crime patterns using spatial and temporal information.",
@@ -25,19 +25,22 @@ export const projects = [
 
     image: "",
     imageAlt: "",
-    relatedResearch: ["graph-machine-learning", "spatio-temporal-ai"],
-    relatedPublications: ["modeling-predicting-crimes-sao-paulo"],
+    relatedResearch: ["graph-machine-learning", "spatio-temporal-ai", "visual-analytics", "explainable-ai"],
+    relatedPublications: [
+      "modeling-predicting-crimes-sao-paulo",
+      "exploring-urban-factors-autoencoders",
+    ],
 
     featured: true,
   },
 
   {
     id: "dimensionality-reduction-distortion-cues",
-    title: "Enriching Dimensionality Reduction with Distortion Cues",
+    title: "Projection Analysis",
     shortDescription:
       "Research on dimensionality reduction and visual cues for understanding distortion in projected data.",
-    category: "Visual Analytics",
-    year: 2026,
+    category: "Dimensionality Reduction",
+    year: 2025,
 
     description:
       "Research on dimensionality reduction and visual cues for understanding distortion in projected data.",
@@ -45,6 +48,7 @@ export const projects = [
     technologies: [
       "Python",
       "Scikit-learn",
+      "t-SNE",
       "UMAP",
       "Plotly",
       "Dimensionality Reduction",
@@ -60,6 +64,44 @@ export const projects = [
     imageAlt: "",
     relatedResearch: ["visual-analytics", "explainable-ai"],
     relatedPublications: ["enriching-dimensionality-reduction-distortion-cues"],
+
+    featured: true,
+  },
+
+  {
+    id: "quantification-assessment",
+    title: "Quantification",
+    shortDescription:
+      "Research on quantification assessment and the role of test-set size in evaluating quantification methods.",
+    category: "Supervised Learning",
+    year: 2019,
+
+    description:
+      "Research on quantification assessment and the role of test-set size in evaluating quantification methods.",
+
+    technologies: [
+      "Python",
+      "Scikit-learn",
+      "SciPy",
+      "Plotly",
+      "matplotlib",
+    ],
+
+    links: {
+      github: "",
+      paper: "",
+      demo: "",
+    },
+
+    image: "",
+    imageAlt: "",
+    relatedResearch: ["quantification"],
+    relatedPublications: [
+      "importance-test-set-size-quantification",
+      "accurately-quantifying-billion-instances",
+      "accurately-quantifying-under-score-variability",
+      "pitfalls-quantification-assessment",
+    ],
 
     featured: true,
   },

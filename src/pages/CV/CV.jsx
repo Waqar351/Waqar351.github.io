@@ -45,10 +45,6 @@ function CV() {
   }, [])
 
   const researchExpertiseItems = cvContent.researchExpertise?.items ?? []
-  const researchExpertiseAreas = (cvContent.researchExpertise?.areaIds ?? [])
-    .map((areaId) => researchById.get(areaId))
-    .filter(Boolean)
-
   const selectedPublications = (cvContent.selectedPublications?.publicationIds ?? [])
     .map((publicationId) => publicationsById.get(publicationId))
     .filter(Boolean)
@@ -202,13 +198,6 @@ function CV() {
           <p className="cv-page__empty">No research expertise is currently available.</p>
         )}
 
-        {researchExpertiseAreas.length ? (
-          <ul className="cv-page__points">
-            {researchExpertiseAreas.map((area) => (
-              <li key={area.id}>{area.shortDescription}</li>
-            ))}
-          </ul>
-        ) : null}
       </section>
 
       <section className="cv-page__section">

@@ -9,12 +9,15 @@ export const researchAreas = [
     topics: [
       "Graph Neural Networks",
       "Graph Representation Learning",
+      "Graph Autoencoders",
       "Graph-based Prediction",
       "Static and Dynamic Graphs",
     ],
     methods: ["Graph Neural Networks", "Graph Representation Learning"],
     relatedProjects: ["graph-based-crime-prediction"],
-    relatedPublications: ["modeling-predicting-crimes-sao-paulo"],
+    relatedPublications: ["exploring-urban-factors-autoencoders",
+      "modeling-predicting-crimes-sao-paulo",
+    ],
     featured: true,
   },
 
@@ -64,7 +67,7 @@ export const researchAreas = [
     shortDescription:
       "Understanding machine learning models and their decisions through interpretable representations and visual analysis.",
     description:
-      "This area examines interpretability and explanation workflows that connect model behavior, feature effects, and visual analysis to support trustworthy machine learning use.",
+      "Examines interpretability and explanation workflows that connect model behavior, feature effects, and visual analysis to support trustworthy machine learning use.",
     topics: [
       "Model Interpretability",
       "Feature Contribution",
@@ -72,6 +75,25 @@ export const researchAreas = [
       "Visual Explanation",
     ],
     methods: ["Model Analysis", "Visual Explanation"],
+    relatedProjects: ["dimensionality-reduction-distortion-cues"],
+    relatedPublications: ["enriching-dimensionality-reduction-distortion-cues"],
+    featured: true,
+  },
+
+  {
+    id: "quantification",
+    title: "Traditional Machine Learning",
+    shortDescription:
+      "Quantification, a supervised learning task to estimate class prevalence.",
+    description:
+      "Focuses on quantification methods that estimate class prevalence in datasets, particularly in scenarios where class distributions may shift between training and deployment.",
+    topics: [
+      "Supervised Learning",
+      "Class Prevalence Estimation",
+      "Distribution Shift",
+      "Quantification Methods",
+    ],
+    methods: ["Quantification Methods", "Distribution Shift Analysis"],
     relatedProjects: ["dimensionality-reduction-distortion-cues"],
     relatedPublications: [],
     featured: true,
