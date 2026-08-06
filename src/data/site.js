@@ -1,6 +1,8 @@
 export const siteConfig = {
   name: "Waqar Hassan",
 
+  url: "https://waqar351.github.io",
+
   title: "AI / Machine Learning Researcher",
 
   tagline:

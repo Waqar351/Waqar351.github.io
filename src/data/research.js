@@ -57,7 +57,9 @@ export const researchAreas = [
     ],
     methods: ["Projection Analysis", "Dimensionality Reduction"],
     relatedProjects: ["dimensionality-reduction-distortion-cues"],
-    relatedPublications: ["enriching-dimensionality-reduction-distortion-cues"],
+    relatedPublications: ["enriching-dimensionality-reduction-distortion-cues",
+      "exploring-urban-factors-autoencoders",
+    ],
     featured: true,
   },
 
@@ -95,7 +97,12 @@ export const researchAreas = [
     ],
     methods: ["Quantification Methods", "Distribution Shift Analysis"],
     relatedProjects: ["quantification-assessment"],
-    relatedPublications: [],
+    relatedPublications: [
+      "importance-test-set-size-quantification",
+      "accurately-quantifying-billion-instances",
+      "accurately-quantifying-score-variability",
+      "pitfalls-quantification-assessment",
+    ],
     featured: true,
   },
 ];

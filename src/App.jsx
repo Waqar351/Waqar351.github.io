@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
+import Seo from './components/Seo/Seo'
 import Home from './pages/Home/Home'
 import Research from './pages/Research/Research'
 import Projects from './pages/Projects/Projects'
@@ -13,6 +14,7 @@ import Contact from './pages/Contact/Contact'
 function App() {
   return (
     <BrowserRouter>
+      <Seo />
       <div className="app-shell">
         <Navbar />
 
