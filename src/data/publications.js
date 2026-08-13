@@ -213,7 +213,7 @@ export const publications = [
       "Addresses the risk of misinterpreting dimensionality-reduction layouts by enriching 2D projections with information about true high-dimensional distances. It presents a Delaunay-based layout enrichment approach that helps users identify distortion-related visual artifacts, with a user evaluation showing fewer analytical errors compared with established visualization baselines.",
 
     links: {
-      doi: "https://doi.org/10.2139/ssrn.6604227",
+      doi: "https://doi.org/10.1016/j.cag.2026.104724",
       paper: "",
       code: "https://github.com/Waqar351/dr_layout_enrichment_cues",
       project: "",
