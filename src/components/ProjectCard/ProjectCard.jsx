@@ -9,7 +9,18 @@ function ProjectCard({ project, mode = 'compact' }) {
 
 	return (
 		<article className={`project-card ${isDetailed ? 'project-card--detailed' : ''}`.trim()}>
-			<div className="project-card__visual" aria-hidden="true"></div>
+			<div className="project-card__visual">
+				{project.image ? (
+					<img
+						src={project.image}
+						alt={project.imageAlt ?? ''}
+						loading="lazy"
+						decoding="async"
+						width="1280"
+						height="720"
+					/>
+				) : null}
+			</div>
 
 			<header className="project-card__header">
 				<h3 className="project-card__title">{project.title}</h3>

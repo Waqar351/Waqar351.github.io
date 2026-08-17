@@ -23,8 +23,9 @@ export const projects = [
       demo: "",
     },
 
-    image: "",
-    imageAlt: "",
+    image: "/images/projects/graph-crime-prediction.webp",
+    imageAlt:
+      "Abstract city street graph with glowing nodes and layered crime hotspot predictions over time",
     relatedResearch: ["graph-machine-learning", "spatio-temporal-ai", "visual-analytics", "explainable-ai"],
     relatedPublications: [
       "modeling-predicting-crimes-sao-paulo",
@@ -60,8 +61,9 @@ export const projects = [
       demo: "",
     },
 
-    image: "",
-    imageAlt: "",
+    image: "/images/projects/dimensionality-reduction-distortion.webp",
+    imageAlt:
+      "Point clusters connected by a geometric mesh with colored edges revealing projection distortion",
     relatedResearch: ["visual-analytics", "explainable-ai"],
     relatedPublications: ["enriching-dimensionality-reduction-distortion-cues"],
 
@@ -93,8 +95,9 @@ export const projects = [
       demo: "",
     },
 
-    image: "",
-    imageAlt: "",
+    image: "/images/projects/quantification-assessment.webp",
+    imageAlt:
+      "Streams of class-colored data points flowing into prevalence rings and changing distributions",
     relatedResearch: ["quantification"],
     relatedPublications: [
       "importance-test-set-size-quantification",
