@@ -31,7 +31,7 @@ relatedPosts:
   - "interpreting-dimensionality-reduction-layouts"
 ---
 
-Two points sit next to each other in a UMAP plot. The visual conclusion feels immediate: they must be similar.
+Two points sit next to each other in a t-SNE/UMAP plot. The visual conclusion feels immediate: they must be similar.
 
 But the plot shows where an algorithm placed them, not the distance between their original feature vectors. If those vectors are far apart, the projection has created a false visual neighbor. The scatterplot alone gives us no warning.
 
@@ -213,7 +213,7 @@ The enrichment is most useful when it changes the next question an analyst asks.
 
 The complete method, equations, experiments, and limitations are described in the [published *Computers & Graphics* article](https://doi.org/10.1016/j.cag.2026.104724).
 
-The [official implementation repository](https://github.com/giva-lab/dr_layout_enrichment_cues) includes the reusable `src/distortion_cues` package, the main projection-analysis notebook, sensitivity and rank-shift analysis, plotting utilities, and datasets or loading procedures used by the experiments. Its README documents Python 3.12 and Poetry as requirements and provides a separate parameter-free script for reproducing the representative Fig. 5 result.
+The [official implementation repository](https://github.com/giva-lab/dr_layout_enrichment_cues) includes the reusable `src/distortion_cues` package, the main projection-analysis notebook, sensitivity and rank-shift analysis, plotting utilities, and datasets or loading procedures used by the experiments.
 
 ## Conclusion
 
