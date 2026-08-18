@@ -27,6 +27,7 @@ relatedProjects:
 relatedPublications:
   - "enriching-dimensionality-reduction-distortion-cues"
 relatedPosts:
+  - "making-hidden-distances-visible-delaunay-geometry"
   - "interpreting-dimensionality-reduction-layouts"
 ---
 
