@@ -7,6 +7,7 @@ function PublicationCard({ publication, mode = 'compact' }) {
 	)
 	const relatedResearch = publication.relatedResearchData ?? []
 	const relatedProjects = publication.relatedProjectsData ?? []
+	const relatedPosts = publication.relatedPostsData ?? []
 	const isDetailed = mode === 'detailed'
 
 	const getLinkLabel = (label) => {
@@ -79,6 +80,22 @@ function PublicationCard({ publication, mode = 'compact' }) {
 						{relatedProjects.map((project) => (
 							<li key={project.id}>
 								<Link to="/projects">{project.title}</Link>
+							</li>
+						))}
+					</ul>
+				</section>
+			) : null}
+
+			{relatedPosts.length && isDetailed ? (
+				<section
+					aria-label={`${publication.title} related articles`}
+					className="publication-card__relations"
+				>
+					<h4 className="publication-card__links-title">Related Articles</h4>
+					<ul className="publication-card__publication-articles">
+						{relatedPosts.map((post) => (
+							<li key={post.slug}>
+								<Link to={`/blog/${post.slug}`}>{post.title} →</Link>
 							</li>
 						))}
 					</ul>

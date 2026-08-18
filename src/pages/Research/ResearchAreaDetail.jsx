@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './ResearchAreaDetail.css'
 
 function ResearchAreaDetail({
@@ -5,6 +6,7 @@ function ResearchAreaDetail({
   index,
   relatedProjects,
   relatedPublications,
+  relatedPosts,
 }) {
   const areaNumber = String(index + 1).padStart(2, '0')
 
@@ -83,6 +85,22 @@ function ResearchAreaDetail({
           <p className="research-detail__empty">No linked publications yet.</p>
         )}
       </section>
+
+      {relatedPosts?.length ? (
+        <section className="research-detail__group" aria-label={`${research.title} related blog articles`}>
+          <h4>Related Articles</h4>
+          <ul className="research-detail__refs">
+            {relatedPosts.map((post) => (
+              <li key={post.slug}>
+                <Link className="research-detail__ref-link" to={`/blog/${post.slug}`}>
+                  {post.title}
+                </Link>
+                <p className="research-detail__ref-meta">{post.readingTime} min read</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
     </article>
   )
 }

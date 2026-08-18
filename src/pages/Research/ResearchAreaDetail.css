@@ -93,6 +93,17 @@
   font-weight: 600;
 }
 
+.research-detail__ref-link {
+  color: var(--color-primary);
+  font-size: 0.93rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.research-detail__ref-link:hover {
+  color: var(--color-secondary);
+}
+
 .research-detail__ref-meta,
 .research-detail__empty {
   color: var(--color-text-muted);

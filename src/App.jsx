@@ -10,6 +10,8 @@ import Publications from './pages/Publications/Publications'
 import About from './pages/About/About'
 import CV from './pages/CV/CV'
 import Contact from './pages/Contact/Contact'
+import Blog from './pages/Blog/Blog'
+import BlogPost from './pages/Blog/BlogPost'
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
             <Route path="/research" element={<Research />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/publications" element={<Publications />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/about" element={<About />} />
             <Route path="/cv" element={<CV />} />
             <Route path="/contact" element={<Contact />} />

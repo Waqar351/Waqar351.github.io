@@ -24,6 +24,9 @@ function Footer() {
 							</a>
 						</li>
 					))}
+					<li>
+						<a href="/rss.xml">RSS</a>
+					</li>
 				</ul>
 			) : null}
 			</div>

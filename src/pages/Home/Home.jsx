@@ -3,10 +3,12 @@ import SectionTitle from '../../components/SectionTitle/SectionTitle'
 import ResearchCard from '../../components/ResearchCard/ResearchCard'
 import ProjectCard from '../../components/ProjectCard/ProjectCard'
 import PublicationCard from '../../components/PublicationCard/PublicationCard'
+import BlogCard from '../../components/BlogCard/BlogCard'
 import { siteConfig } from '../../data/site'
 import { researchAreas } from '../../data/research'
 import { projects } from '../../data/projects'
 import { publications } from '../../data/publications'
+import { getPublishedPosts } from '../../lib/blog/posts'
 import './Home.css'
 
 function Home() {
@@ -27,6 +29,7 @@ function Home() {
   const selectedPublications = publications.filter(
     (publication) => publication.featured === true,
   )
+  const recentPosts = getPublishedPosts().slice(0, 3)
 
   return (
     <div className="home-page">
@@ -101,6 +104,24 @@ function Home() {
         ) : (
           <p className="empty-state">No featured projects are currently available.</p>
         )}
+      </section>
+
+      <section className="page-section">
+        <SectionTitle
+          title="Latest Writing"
+          subtitle="Technical articles and research perspectives"
+          level="h2"
+        />
+        {recentPosts.length ? (
+          <div className="home-blog-grid">
+            {recentPosts.map((post) => (
+              <BlogCard key={post.slug} post={post} compact />
+            ))}
+          </div>
+        ) : (
+          <p className="empty-state">No blog articles are currently available.</p>
+        )}
+        <Link to="/blog" className="home-blog-link">View all articles →</Link>
       </section>
 
       <section className="page-section">

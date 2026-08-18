@@ -6,9 +6,11 @@ import { publications } from '../../data/publications'
 import { projects } from '../../data/projects'
 import { researchAreas } from '../../data/research'
 import './Publications.css'
+import { getPublishedPosts } from '../../lib/blog/posts'
 
 function Publications() {
   const [activeType, setActiveType] = useState('All')
+  const posts = getPublishedPosts()
 
   const researchById = useMemo(
     () => new Map(researchAreas.map((research) => [research.id, research])),
@@ -84,9 +86,12 @@ function Publications() {
           relatedProjectsData: (publication.relatedProjects ?? [])
             .map((projectId) => projectsById.get(projectId))
             .filter(Boolean),
+          relatedPostsData: posts.filter((post) =>
+            post.relatedPublications?.includes(publication.id),
+          ),
         })),
       })),
-    [groupedPublications, projectsById, researchById],
+    [groupedPublications, posts, projectsById, researchById],
   )
 
   return (

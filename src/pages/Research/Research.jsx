@@ -5,9 +5,11 @@ import { projects } from '../../data/projects'
 import { publications } from '../../data/publications'
 import { siteConfig } from '../../data/site'
 import ResearchAreaDetail from './ResearchAreaDetail'
+import { getPublishedPosts } from '../../lib/blog/posts'
 import './Research.css'
 
 function Research() {
+  const posts = getPublishedPosts()
   const projectsById = new Map(projects.map((project) => [project.id, project]))
   const publicationsById = new Map(
     publications.map((publication) => [publication.id, publication]),
@@ -26,6 +28,7 @@ function Research() {
       ...area,
       relatedProjects,
       relatedPublications,
+      relatedPosts: posts.filter((post) => post.relatedResearch?.includes(area.id)),
     }
   })
 
@@ -52,6 +55,7 @@ function Research() {
                 index={index}
                 relatedProjects={research.relatedProjects}
                 relatedPublications={research.relatedPublications}
+                relatedPosts={research.relatedPosts}
               />
             ))}
           </div>

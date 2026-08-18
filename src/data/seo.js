@@ -19,6 +19,11 @@ export const seoByPath = {
     description:
       'Peer-reviewed publications by Waqar Hassan in machine learning, graph neural networks, visual analytics, dimensionality reduction, and quantification.',
   },
+  '/blog': {
+    title: 'Technical Blog | Waqar Hassan',
+    description:
+      'Technical articles by Waqar Hassan on graph machine learning, spatio-temporal AI, explainable AI, visual analytics, dimensionality reduction, and quantification.',
+  },
   '/about': {
     title: 'About Waqar Hassan | Machine Learning Researcher',
     description:

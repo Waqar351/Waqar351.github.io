@@ -157,6 +157,25 @@
   border-color: rgba(37, 99, 235, 0.3);
 }
 
+.publication-card__publication-articles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.32rem;
+}
+
+.publication-card__publication-articles a {
+  color: var(--color-primary);
+  font-size: 0.83rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.publication-card__publication-articles a:hover {
+  color: var(--color-secondary);
+}
+
 @media (max-width: 620px) {
   .publication-card,
   .publication-card--detailed {

@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 import { publications } from '../../data/publications'
 import { seoByPath } from '../../data/seo'
 import { siteConfig } from '../../data/site'
+import { getPostBySlug } from '../../lib/blog/posts'
 
 const structuredDataId = 'site-structured-data'
 
@@ -42,7 +43,7 @@ function createPersonData() {
   }
 }
 
-function createStructuredData(pathname, metadata, canonicalUrl) {
+function createStructuredData(pathname, metadata, canonicalUrl, post) {
   const person = createPersonData()
   const website = {
     '@type': 'WebSite',
@@ -52,7 +53,13 @@ function createStructuredData(pathname, metadata, canonicalUrl) {
     author: { '@id': person['@id'] },
   }
   const page = {
-    '@type': pathname === '/about' ? 'ProfilePage' : pathname === '/publications' ? 'CollectionPage' : 'WebPage',
+    '@type': pathname === '/about'
+      ? 'ProfilePage'
+      : pathname === '/publications' || pathname === '/blog'
+        ? 'CollectionPage'
+        : post
+          ? 'WebPage'
+          : 'WebPage',
     '@id': `${canonicalUrl}#webpage`,
     url: canonicalUrl,
     name: metadata.title,
@@ -83,9 +90,39 @@ function createStructuredData(pathname, metadata, canonicalUrl) {
     }
   }
 
+  if (pathname === '/blog') {
+    page.mainEntity = {
+      '@type': 'Blog',
+      name: `${siteConfig.name} Technical Blog`,
+      url: canonicalUrl,
+      author: { '@id': person['@id'] },
+    }
+  }
+
+  const graph = [website, person, page]
+
+  if (post) {
+    const article = {
+      '@type': 'BlogPosting',
+      '@id': `${canonicalUrl}#article`,
+      headline: post.title,
+      description: post.summary,
+      datePublished: post.date,
+      ...(post.updated ? { dateModified: post.updated } : {}),
+      image: new URL(post.featuredImage.src, siteConfig.url).href,
+      author: { '@id': person['@id'] },
+      mainEntityOfPage: { '@id': page['@id'] },
+      articleSection: post.category,
+      keywords: post.tags.join(', '),
+      wordCount: post.wordCount,
+    }
+    page.mainEntity = { '@id': article['@id'] }
+    graph.push(article)
+  }
+
   return {
     '@context': 'https://schema.org',
-    '@graph': [website, person, page],
+    '@graph': graph,
   }
 }
 
@@ -94,16 +131,32 @@ function Seo() {
 
   useEffect(() => {
     const normalizedPath = pathname !== '/' ? pathname.replace(/\/$/, '') : pathname
-    const metadata = seoByPath[normalizedPath] ?? seoByPath['/']
+    const postSlug = normalizedPath.startsWith('/blog/')
+      ? normalizedPath.slice('/blog/'.length)
+      : null
+    const post = postSlug ? getPostBySlug(postSlug) : null
+    const metadata = post
+      ? {
+          title: post.seo?.title ?? `${post.title} | ${siteConfig.name}`,
+          description: post.seo?.description ?? post.summary,
+        }
+      : seoByPath[normalizedPath] ?? seoByPath['/']
     const canonicalUrl = new URL(normalizedPath === '/' ? '/' : normalizedPath, siteConfig.url).href
+    const imageUrl = post
+      ? new URL(post.featuredImage.src, siteConfig.url).href
+      : new URL('/images/profile-research-hero.webp', siteConfig.url).href
 
     document.title = metadata.title
     setMeta('name', 'description', metadata.description)
     setMeta('property', 'og:title', metadata.title)
     setMeta('property', 'og:description', metadata.description)
     setMeta('property', 'og:url', canonicalUrl)
+    setMeta('property', 'og:type', post ? 'article' : 'website')
+    setMeta('property', 'og:image', imageUrl)
+    setMeta('name', 'twitter:card', 'summary_large_image')
     setMeta('name', 'twitter:title', metadata.title)
     setMeta('name', 'twitter:description', metadata.description)
+    setMeta('name', 'twitter:image', imageUrl)
     setCanonical(canonicalUrl)
 
     let script = document.getElementById(structuredDataId)
@@ -116,7 +169,7 @@ function Seo() {
     }
 
     script.textContent = JSON.stringify(
-      createStructuredData(normalizedPath, metadata, canonicalUrl),
+      createStructuredData(normalizedPath, metadata, canonicalUrl, post),
     )
   }, [pathname])
 

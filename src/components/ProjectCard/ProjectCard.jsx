@@ -5,6 +5,7 @@ function ProjectCard({ project, mode = 'compact' }) {
 	const projectLinks = Object.entries(project.links ?? {}).filter(([, value]) => value)
 	const relatedResearch = project.relatedResearchData ?? []
 	const relatedPublications = project.relatedPublicationsData ?? []
+	const relatedPosts = project.relatedPostsData ?? []
 	const isDetailed = mode === 'detailed'
 
 	return (
@@ -85,6 +86,20 @@ function ProjectCard({ project, mode = 'compact' }) {
 								</li>
 							)
 						})}
+					</ul>
+				</section>
+			) : null}
+
+			{relatedPosts.length && isDetailed ? (
+				<section aria-label={`${project.title} related articles`} className="project-card__section">
+					<h4 className="project-card__section-title">Related Articles</h4>
+					<ul className="project-card__publication-refs">
+						{relatedPosts.map((post) => (
+							<li key={post.slug}>
+								<p className="project-card__publication-title">{post.title}</p>
+								<Link to={`/blog/${post.slug}`}>Read article →</Link>
+							</li>
+						))}
 					</ul>
 				</section>
 			) : null}

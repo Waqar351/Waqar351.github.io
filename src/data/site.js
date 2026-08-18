@@ -24,6 +24,7 @@ export const siteConfig = {
     { label: "Research", path: "/research" },
     { label: "Projects", path: "/projects" },
     { label: "Publications", path: "/publications" },
+    { label: "Blog", path: "/blog" },
     { label: "About", path: "/about" },
     { label: "CV", path: "/cv" },
     { label: "Contact", path: "/contact" },
