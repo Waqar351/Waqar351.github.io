@@ -55,8 +55,17 @@ function Home() {
           </nav>
         </div>
 
-        <aside className="home-hero__visual" aria-hidden="true">
-          <div className="home-hero__graph"></div>
+        <aside className="home-hero__visual">
+          <div className="home-hero__graph">
+            <img
+              src="/images/profile-research-hero.webp"
+              alt="Research visualization combining graph learning, urban data, dimensionality reduction, and analytical layers"
+              width="1000"
+              height="800"
+              decoding="async"
+              fetchPriority="high"
+            />
+          </div>
         </aside>
       </section>
 

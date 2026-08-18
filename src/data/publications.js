@@ -26,6 +26,10 @@ export const publications = [
     description:
       "A visualization-assisted framework for analyzing fused latent representations of heterogeneous static and dynamic urban data. The study shows that combined representations can reveal more structured patterns, while separate representations remain useful in specific cases.",
 
+    image: "/images/publications/urban-factors-autoencoders.webp",
+    imageAlt:
+      "Static and dynamic urban data layers merging through autoencoders into a shared latent embedding",
+
     links: {
       doi: "https://doi.org/10.1109/SIBGRAPI67909.2025.11223351",
       paper: "",
@@ -57,6 +61,10 @@ export const publications = [
     description:
       "This work investigates spatio-temporal Graph Neural Networks for crime prediction by comparing DySAT and EvolveGCN architectures. It introduces a data modeling framework that integrates crime data, street map graphs, and urban information, providing a consolidated approach for representing heterogeneous urban data in GNN-based crime prediction.",
 
+    image: "/images/publications/crime-prediction-gnn.webp",
+    imageAlt:
+      "Urban feature layers feeding sequential street graphs that produce predicted activity hotspots",
+
     links: {
       doi: "https://doi.org/10.1007/978-3-031-79035-5_26",
       paper: "",
@@ -86,6 +94,10 @@ export const publications = [
 
     description:
       "A study of concept drift in score-based quantification, introducing MoSS for modeling synthetic classification scores and DySyn, a drift-resilient quantifier for binary classes. Experiments show that DySyn outperforms state-of-the-art quantifiers under concept drift.",
+
+    image: "/images/publications/score-variability.webp",
+    imageAlt:
+      "Blue and coral classification-score distributions increasingly overlapping under concept drift",
 
     links: {
       doi: "https://doi.org/10.1109/ICDM51629.2021.00149",
@@ -117,6 +129,10 @@ export const publications = [
     description:
       "Examines the limitations of the artificial-prevalence protocol (APP) for evaluating quantification methods, focusing on the effects of synthetic class prevalence in test sets. It introduces the Lazy baseline quantifier and radar charts as complementary tools for identifying situations in which quantifiers may achieve artificially improved performance.",
 
+    image: "/images/publications/quantification-pitfalls.webp",
+    imageAlt:
+      "Contrasting synthetic and natural sampling protocols revealing biased evaluation patterns",
+
     links: {
       doi: "https://ceur-ws.org/Vol-3052/paper23.pdf",
       paper: "",
@@ -146,6 +162,10 @@ export const publications = [
 
     description:
       "Introduces Sample Mean Matching (SMM), a highly efficient quantification algorithm designed to estimate class distributions at very large scale. An empirical evaluation across 25 benchmark and real-world datasets shows that SMM achieves competitive counting accuracy while being orders of magnitude faster than most established and state-of-the-art quantifiers.",
+
+    image: "/images/publications/billion-instances.webp",
+    imageAlt:
+      "A massive high-speed data stream compressed into an accurate class-prevalence ring",
 
     award: "Best Paper Award",
 
@@ -180,6 +200,10 @@ export const publications = [
     description:
       "Investigates the impact of test set size on the evaluation and performance of quantification methods. Through a broad experimental evaluation, it demonstrates the importance of test set size, identifies performance limitations on small test sets, and proposes a meta-learning scheme for selecting the most suitable quantifier based on test set size.",
 
+    image: "/images/publications/test-set-size.webp",
+    imageAlt:
+      "Increasing sample containers showing uncertainty shrinking as test-set size grows",
+
     links: {
       doi: "https://doi.org/10.24963/ijcai.2020/366",
       paper: "",
@@ -211,6 +235,10 @@ export const publications = [
 
    description:
       "Addresses the risk of misinterpreting dimensionality-reduction layouts by enriching 2D projections with information about true high-dimensional distances. It presents a Delaunay-based layout enrichment approach that helps users identify distortion-related visual artifacts, with a user evaluation showing fewer analytical errors compared with established visualization baselines.",
+
+    image: "/images/publications/dimensionality-reduction-cues.webp",
+    imageAlt:
+      "Projected clusters connected by a triangular mesh with coral edges revealing distance distortion",
 
     links: {
       doi: "https://doi.org/10.1016/j.cag.2026.104724",

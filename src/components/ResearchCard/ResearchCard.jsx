@@ -6,6 +6,19 @@ function ResearchCard({ research, index }) {
 
 	return (
 		<article className="research-card">
+			{research.image ? (
+				<div className="research-card__visual">
+					<img
+						src={research.image}
+						alt={research.imageAlt ?? ''}
+						loading="lazy"
+						decoding="async"
+						width="960"
+						height="540"
+					/>
+				</div>
+			) : null}
+
 			<header className="research-card__header">
 				<p className="research-card__index">{researchIndex}</p>
 				<h3 className="research-card__title">{research.title}</h3>

@@ -19,6 +19,19 @@ function PublicationCard({ publication, mode = 'compact' }) {
 
 	return (
 		<article className={`publication-card ${isDetailed ? 'publication-card--detailed' : ''}`.trim()}>
+			{publication.image ? (
+				<div className="publication-card__visual">
+					<img
+						src={publication.image}
+						alt={publication.imageAlt ?? ''}
+						loading="lazy"
+						decoding="async"
+						width="960"
+						height="540"
+					/>
+				</div>
+			) : null}
+
 			<header className="publication-card__header">
 				<p className="publication-card__meta-top">
 					<span>{publication.year ?? 'In review'}</span>
